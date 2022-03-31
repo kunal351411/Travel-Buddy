@@ -50,22 +50,22 @@ const PlaceDetails = ({place , selected , refProp}) => {
                     place.address && (
                         <Typography gutterBottom variant="body2" color="textSecondary" className={classes.subtitle}>
                             <LocationOnIcon/> {place.address}
-                        </Typography> 
+                        </Typography>
                     )
                 }
                 {
                     place.phone && (
                         <Typography gutterBottom variant="body2" color="textSecondary" className={classes.spacing}>
                             <PhoneIcon/> {place.phone}
-                        </Typography> 
+                        </Typography>
                     )
                 }
             </CardContent>
             <CardActions>
-                <Button size="small" color="primary" onClick={() => window.open(place.web_url , "_blank")}>
+                <Button size="small" color="primary" onClick={() => place.web_url&&window.open(place.web_url , "_blank")}>
                     Trip Advisor
                 </Button>
-                <Button size="small" color="primary" onClick={() => window.open(place.website , "_blank")}>
+                <Button size="small" color="primary" onClick={() => place.website&&window.open(place.website , "_blank")}>
                     Website
                 </Button>
             </CardActions>
